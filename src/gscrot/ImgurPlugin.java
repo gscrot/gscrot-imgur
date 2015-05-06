@@ -2,13 +2,13 @@ package gscrot;
 
 import gscrot.api.Plugin;
 
-import com.redpois0n.gscrot.actions.Action;
+import com.redpois0n.gscrot.CaptureUploader;
 
 public class ImgurPlugin extends Plugin {
 
 	public ImgurPlugin() {
 		super("Imgur");
-		Action.addAction(new UploadAction());
+		CaptureUploader.addUploader(new Uploader());
 	}
 
 }

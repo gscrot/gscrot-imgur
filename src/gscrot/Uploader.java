@@ -2,13 +2,12 @@ package gscrot;
 
 import java.awt.image.BufferedImage;
 
-import com.redpois0n.gscrot.actions.Action;
-import com.redpois0n.gscrot.actions.Event;
+import com.redpois0n.gscrot.CaptureUploader;
 
-public class UploadAction extends Action {
+public class Uploader extends CaptureUploader {
 	
-	public UploadAction() {
-		super(Event.AFTER_CAPTURE);
+	public Uploader() {
+
 	}
 
 	@Override
