@@ -13,7 +13,11 @@ public class UploadAction extends Action {
 
 	@Override
 	public void process(BufferedImage image) {
-		
+		try {
+			System.out.println(Imgur.upload(image));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
