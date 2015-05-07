@@ -1,5 +1,7 @@
 package gscrot;
 
+import iconlib.IconUtils;
+
 import java.awt.image.BufferedImage;
 
 import com.redpois0n.gscrot.CaptureUploader;
@@ -7,7 +9,7 @@ import com.redpois0n.gscrot.CaptureUploader;
 public class Uploader extends CaptureUploader {
 	
 	public Uploader() {
-		super("Imgur");
+		super("Imgur", IconUtils.getIcon("imgur", Uploader.class));
 	}
 
 	@Override
