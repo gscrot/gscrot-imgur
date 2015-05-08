@@ -2,9 +2,12 @@ package gscrot.uploader.imgur;
 
 import iconlib.IconUtils;
 
-import java.awt.image.BufferedImage;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
+import com.redpois0n.gscrot.Capture;
 import com.redpois0n.gscrot.CaptureUploader;
+import com.redpois0n.gscrot.UploadResponse;
 
 public class Uploader extends CaptureUploader {
 	
@@ -13,11 +16,25 @@ public class Uploader extends CaptureUploader {
 	}
 
 	@Override
-	public void process(BufferedImage image) {
-		try {
-			System.out.println(Imgur.upload(image));
-		} catch (Exception e) {
-			e.printStackTrace();
+	public UploadResponse process(Capture capture) throws Exception {
+		String response = Imgur.upload(capture.getBinary());
+		
+		JSONObject jo = (JSONObject) JSONValue.parse(response);
+		
+		if (!jo.get("success").toString().equalsIgnoreCase("true")) {
+			throw new Exception(jo.get("status").toString());
+		}
+		
+		JSONObject data = (JSONObject) jo.get("data");
+		Object link = data.get("link");
+		Object delhash = data.get("deletehash");
+		
+		if (link != null && delhash != null) {
+			String rmlink = "https://imgur.com/delete/" + delhash;
+			
+			return new UploadResponse(link.toString().replace("http://", "https://"), rmlink);
+		} else {
+			throw new Exception("Error: " + response);
 		}
 	}
 
