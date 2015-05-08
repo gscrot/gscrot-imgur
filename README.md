@@ -6,4 +6,4 @@ API documentation from when you register a new imgur application
 
 ## Dependencies
 
-- None
+- [json-simple](https://code.google.com/p/json-simple/)
