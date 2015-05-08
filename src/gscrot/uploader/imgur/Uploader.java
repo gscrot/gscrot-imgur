@@ -32,7 +32,10 @@ public class Uploader extends CaptureUploader {
 		if (link != null && delhash != null) {
 			String rmlink = "https://imgur.com/delete/" + delhash;
 			
-			return new UploadResponse(link.toString().replace("http://", "https://"), rmlink);
+			UploadResponse ur = new UploadResponse(link.toString().replace("http://", "https://"), rmlink);
+			ur.setRaw(response);
+			
+			return ur;
 		} else {
 			throw new Exception("Error: " + response);
 		}
