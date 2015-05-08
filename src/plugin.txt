@@ -1,1 +1,1 @@
-gscrot.ImgurPlugin
+gscrot.uploader.imgur.ImgurPlugin

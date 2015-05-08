@@ -1,4 +1,4 @@
-package gscrot;
+package gscrot.uploader.imgur;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;

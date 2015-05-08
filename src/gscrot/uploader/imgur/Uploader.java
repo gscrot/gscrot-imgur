@@ -1,4 +1,4 @@
-package gscrot;
+package gscrot.uploader.imgur;
 
 import iconlib.IconUtils;
 
