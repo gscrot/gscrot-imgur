@@ -8,7 +8,7 @@ public class ImgurPlugin extends Plugin {
 
 	public ImgurPlugin() {
 		super("Imgur");
-		CaptureUploader.addUploader(new Uploader());
+		CaptureUploader.addUploader(new ImgurUploader());
 	}
 
 }

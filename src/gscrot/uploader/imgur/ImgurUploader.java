@@ -9,10 +9,10 @@ import com.redpois0n.gscrot.Capture;
 import com.redpois0n.gscrot.CaptureUploader;
 import com.redpois0n.gscrot.UploadResponse;
 
-public class Uploader extends CaptureUploader {
+public class ImgurUploader extends CaptureUploader {
 	
-	public Uploader() {
-		super("Imgur", IconUtils.getIcon("imgur", Uploader.class));
+	public ImgurUploader() {
+		super("Imgur", IconUtils.getIcon("imgur", ImgurUploader.class));
 	}
 
 	@Override
